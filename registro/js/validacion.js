@@ -15,12 +15,13 @@ const email = document.getElementById('email')
 const apellido = document.getElementById('apellido')
 const contraseña = document.getElementById('password1')
 const repcontraseña = document.getElementById('password2')
-    
+
+if(password1 <= 6){
+showAlertError()
+}
+     
     if (password1 !== password2) {
-        mensajeError.textContent = "Las contraseñas no coinciden.";
-        event.preventDefault();  
-    } else {
-        mensajeError.textContent = "";
+        showAlertError()
     }
 
       if(nombre.value == 0) {
