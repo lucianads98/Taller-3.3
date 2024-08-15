@@ -9,20 +9,39 @@ function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
 }
 
-document.getElementById("form").addEventListener("submit", function(event) {
-    let nombre = document.getElementById("nombre").ariaValueMax.trim();
-    const apellido = document.getElementById("apellido").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const terminos = document.getElementById("terminos").checked;
-    const password1 = document.getElementById("password1").value;
-    const password2 = document.getElementById("password2").value;
-    const mensajeError = document.getElementById("mensajeError");
+
+const nombre = document.getElementById('nombre')
+const email = document.getElementById('email')
+const apellido = document.getElementById('apellido')
+const contraseña = document.getElementById('password1')
+const repcontraseña = document.getElementById('password2')
     
     if (password1 !== password2) {
         mensajeError.textContent = "Las contraseñas no coinciden.";
         event.preventDefault();  
     } else {
         mensajeError.textContent = "";
+    }
+
+      if(nombre.value == 0) {
+    
+        showAlertError()
+    }else{
+        showAlertSuccess()
+    }
+
+    if(apellido.value == 0) {
+    
+        showAlertError()
+    }else{
+        showAlertSuccess()
+    }
+
+    if(email.value == 0) {
+    
+        showAlertError()
+    }else{
+        showAlertSuccess()
     }
 }));
 
