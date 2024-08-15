@@ -1,3 +1,6 @@
+document.getElementById("form").addEventListener("submit", function(event) {
+     event.preventDefault();
+
 function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
 }
@@ -6,7 +9,8 @@ function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
 }
 
-document.getElementsByClassName("col-sm-6").addEventListener("submit", function(event) {
+
+document.getElementById("form").addEventListener("submit", function(event) {
     const password1 = document.getElementById("password1").value;
     const password2 = document.getElementById("password2").value;
     const mensajeError = document.getElementById("mensajeError");
@@ -17,4 +21,4 @@ document.getElementsByClassName("col-sm-6").addEventListener("submit", function(
     } else {
         mensajeError.textContent = "";
     }
-});
+}));
